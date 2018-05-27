@@ -3,7 +3,7 @@ package javadz.DZ5;
 
 class PinValidator {
   
-    protected boolean CheckPin(Integer pinHash) {
+    protected boolean checkPin(Integer pinHash) {
         return true;
     }
 
