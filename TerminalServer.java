@@ -7,32 +7,32 @@ class TerminalServer implements ITerminal{
     HashMap<Integer, Account> accounts = null;
     //Integer pinHash = null;
      
-//    private void AccessAccount(int request, int pinHash) {
+//    private void accessAccount(int request, int pinHash) {
 //        ;
 //    }
     
-    protected void CheckPin(Integer pinHash) {
+    protected void checkPin(Integer pinHash) {
         ;
     }
     
-//    private Account GetAccount(Integer pinHash) {
+//    private Account getAccount(Integer pinHash) {
 //        return new Account();
 //    }
 
     @Override
-    public int CheckBalance() //throws NoConnection
+    public int checkBalance() //throws NoConnection
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean Deposit(int amount) //throws NoConnection
+    public boolean deposit(int amount) //throws NoConnection
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean Withdraw(int amount) //throws NoConnection, InsufficientFundsException
+    public boolean withdraw(int amount) //throws NoConnection, InsufficientFundsException
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
