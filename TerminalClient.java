@@ -15,14 +15,14 @@ public class TerminalClient implements ITerminal {
     private Integer failedAttempts = null;
     private boolean isLocked = false;
 
-    private void Connect(Integer cardNumber) {
-        if (!IsAccountLocked(currAccountNumber)) {
+    private void connect(Integer cardNumber) {
+        if (!isAccountLocked(currAccountNumber)) {
             this.currAccountNumber = cardNumber;
-            AccessAccount();
+            accessAccount();
         }
     }
 
-    private boolean IsAccountLocked(Integer cardNumber) {
+    private boolean isAccountLocked(Integer cardNumber) {
         if (cardNumber != null) {
             if (this.currAccountNumber == cardNumber && this.blockTimer != null && isLocked) {
                 return true;
@@ -31,42 +31,42 @@ public class TerminalClient implements ITerminal {
         return false;
     }
 
-    private Integer AskUserPin() {
+    private Integer askUserPin() {
         //Введите пин
         //Чтение пин
         //Возврат пинхэш
         Integer pin = null;
-        GetPinHash(pin, currAccountNumber);
+        getPinHash(pin, currAccountNumber);
         Integer pinHash = null;
         return pinHash;
     }
 
-    private int GetPinHash(int pin, int cardNumber) {
+    private int getPinHash(int pin, int cardNumber) {
         return 1;
     }
 
-    private void AccessAccount() {
+    private void accessAccount() {
 
         //Если failedAttempts < 2
         //Иначе Блокировка
-        Integer pinHash = AskUserPin();
+        Integer pinHash = askUserPin();
         if (failedAttempts < 2) {
             try {
-                pv.CheckPin(pinHash);
+                pv.checkPin(pinHash);
             } catch (Exception e) { //IncorrectPinException
                 ++failedAttempts;
                 // println("Введен неправильный пин-код, повторите попытку");
             }
         } else {
-            LockAccount();
+            lockAccount();
         }
     }
 
-    private boolean IsDivisible(Integer amount, Integer by) {
+    private boolean isDivisible(Integer amount, Integer by) {
         return amount % by == 0;
     }
 
-    private void LockAccount() {
+    private void lockAccount() {
         //blockTimer = new Timer(Long.parseLong((new Date().getTime() + 5000)));
         isLocked = true;
 
@@ -83,26 +83,26 @@ public class TerminalClient implements ITerminal {
         }, 5000);
     }
 
-    private void GiveOutCash() {
+    private void giveOutCash() {
         ;
     }
 
-    private void DepositSuccessful() {
+    private void depositSuccessful() {
         ;
     }
 
     @Override
-    public int CheckBalance() {
+    public int checkBalance() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean Deposit(int amount) {
+    public boolean deposit(int amount) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean Withdraw(int amount) {
+    public boolean withdraw(int amount) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
