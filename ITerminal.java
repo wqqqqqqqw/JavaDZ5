@@ -3,8 +3,8 @@ package javadz.DZ5;
 
 public interface ITerminal {
     
-    int CheckBalance();
-    boolean Deposit(int amount);
-    boolean Withdraw(int amount);
+    int checkBalance();
+    boolean deposit(int amount);
+    boolean withdraw(int amount);
 
 }
