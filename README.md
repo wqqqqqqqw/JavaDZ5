@@ -1,3 +1,3 @@
 # JavaDZ5
-Exceptions
+Exceptions.
 Two branches (master, draft)
