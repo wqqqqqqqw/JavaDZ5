@@ -11,15 +11,15 @@ class Account {
         this.pin = pin;
     }
 
-    private Integer GetBallance() {
+    private Integer getBallance() {
         return this.balance;
     }
 
-    private void SetBallance(Integer amount) {
+    private void setBallance(Integer amount) {
         this.balance = amount;
     }
 
-    private String GetPinHash() {
+    private String getPinHash() {
         return this.cardNumber.toString() + this.pin.toString();
     }
 
